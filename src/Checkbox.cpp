@@ -6,16 +6,16 @@ Checkbox::Checkbox(const char* name) : name(name) {
 
 }
 
-Checkbox::Checkbox(const char* name, bool isSelected) : name(name), isSelected(isSelected) {
+Checkbox::Checkbox(const char* name, bool isSelected) : name(name), selected(selected) {
 
 }
 
-Checkbox::Checkbox(const char* name, RECT margins, bool isSelected): name(name), margins(margins), isSelected(isSelected) {
+Checkbox::Checkbox(const char* name, RECT margins, bool isSelected): name(name), margins(margins), selected(selected) {
 
 }
 
 void Checkbox::render(int x, int y, int columnWidth, LPDIRECT3DDEVICE9 *pDevice, FontManager *fontManager) {
-	if(isSelected)
+	if(selected)
 		drawFilledRect(x + margins.left, y + margins.top, 10, getHeight() - margins.top - margins.bottom, 1, 0xFFFF9400, 0xFF2E2E2E, pDevice);
 	else
 		drawFilledRect(x + margins.left, y + margins.top, 10, getHeight() - margins.top - margins.bottom, 1, 0xFF44260C, 0xFF2E2E2E, pDevice);
@@ -29,7 +29,7 @@ void Checkbox::handleInput(int x, int y, int columnWidth, int mouseX, int mouseY
 		if (isMousePressed) {
 			isMousePressed = false;
 			if(isInRect(mouseX, mouseY, x + margins.left, y + margins.top, 10, getHeight() - margins.top - margins.bottom)) {
-				isSelected = !isSelected;
+				selected = !selected;
 			}
 		}
 	}

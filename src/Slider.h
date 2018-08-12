@@ -8,6 +8,9 @@ public:
 	void render(int x, int y, int columnWidth, LPDIRECT3DDEVICE9 *pDevice, FontManager *fontManager);
 	void handleInput(int x, int y, int columnWidth, int mouseX, int mouseY);
 	int getHeight();
+	float getValue() {
+		return startValue;
+	};
 
 private:
 	RECT margins;

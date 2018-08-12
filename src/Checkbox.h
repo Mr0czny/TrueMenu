@@ -9,10 +9,13 @@ public:
 	void render(int x, int y, int columnWidth, LPDIRECT3DDEVICE9 *pDevice, FontManager *fontManager);
 	void handleInput(int x, int y, int columnWidth, int mouseX, int mouseY);
 	int getHeight();
+	bool isSelected() {
+		return selected;
+	}
 
 private:
 	RECT margins;
 	const char* name;
-	bool isSelected;
+	bool selected;
 	bool isMousePressed = false;
 };
