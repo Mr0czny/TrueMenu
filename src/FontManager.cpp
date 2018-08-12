@@ -1,0 +1,7 @@
+#include "FontManager.h"
+
+FontManager::FontManager(LPDIRECT3DDEVICE9 *pDevice) {
+	if (font12 == NULL) D3DXCreateFont(*pDevice, 12, 0, FW_THIN, 1, 0, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH | FF_DONTCARE, "Verdana", &font12);
+	if (font12Bold == NULL) D3DXCreateFont(*pDevice, 12, 0, FW_BOLD, 1, 0, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH | FF_DONTCARE, "Verdana", &font12Bold);
+	if (font14 == NULL) D3DXCreateFont(*pDevice, 14, 0, FW_THIN, 1, 0, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH | FF_DONTCARE, "Verdana", &font14);
+}
