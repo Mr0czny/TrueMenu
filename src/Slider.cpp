@@ -23,7 +23,6 @@ void Slider::render(int x, int y, int columnWidth, LPDIRECT3DDEVICE9 *pDevice, F
 	RECT fontRect = GetTextRect(name, fontManager->font12);
 	float width = columnWidth - margins.left - margins.right - 6;
 	DrawString(x + margins.left + (columnWidth - margins.left - margins.right) / 2 - (fontRect.right - fontRect.left) / 2, y + getHeight() / 2 - (fontRect.bottom - fontRect.top) / 2, 0xFFFFFFFF, fontManager->font12, name);
-	//drawFilledRect(x + margins.left, y + margins.top + 15, width+3, 5, 1, 0xff00ffff, 0xff00ffff, pDevice);
 	FillRGB(x + margins.left, y + margins.top + 15, width + 3, 5, 0xFF555555, pDevice);
 	float steps = (maxValue - minValue) / step;
 	float stepDistance = width / steps;

@@ -33,3 +33,8 @@
 
 *.opendb
 .vs
+
+[Dd]ebug/
+[Rr]elease/
+*.vcxproj*
+*.sln
